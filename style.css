@@ -683,4 +683,57 @@ footer {
     width: 100%;
     box-sizing: border-box;
   }
+  /* ------------------------------------------- */
+  /* DOKUMENTASI & UMUM */
+  /* ------------------------------------------- */
+
+  /* Tambahan: Memastikan isi seksi dokumentasi rata tengah */
+  #dokumentasi {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* KUNCI: Membuat video, tombol, dan foto ke tengah */
+    text-align: center;
+  }
+
+  .retro-border {
+    border: 4px solid var(--neon-biru);
+    box-shadow: 4px 4px 0px var(--neon-hijau);
+    box-sizing: border-box; /* KUNCI: Agar bingkai tidak melebar keluar */
+  }
+
+  .dok-video-container {
+    max-width: 800px;
+    width: 100%; /* Memastikan lebar penuh sampai batas max-width */
+    margin: 0 auto 2rem auto; /* Memastikan posisi tengah */
+    position: relative;
+    padding-bottom: 56.25%; /* Rasio 16:9 agar video tidak gepeng */
+    height: 0;
+    overflow: hidden; /* Memastikan tidak ada yang bocor keluar bingkai */
+    background: #000;
+  }
+
+  .dok-video-container video,
+  .dok-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Menghilangkan border bawaan iframe jika ada */
+  }
+
+  .dok-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%; /* Memastikan wadah foto juga penuh */
+  }
+
+  .dok-content img {
+    max-width: 100%;
+    height: auto;
+    width: 350px;
+    object-fit: cover;
+  }
 }
